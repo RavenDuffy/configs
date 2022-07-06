@@ -42,8 +42,11 @@
   "workbench.iconTheme": "material-icon-theme",
   "security.workspace.trust.untrustedFiles": "open",
   "cSpell.userWords": [
+    "esbenp",
     "fastify",
+    "Fira",
     "Formik",
+    "glassit",
     "guidewire",
     "hmacsha",
     "organise",
