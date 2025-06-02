@@ -47,3 +47,6 @@ vim.cmd("colorscheme onedark")
 local telebuiltin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", telebuiltin.find_files, {})
 vim.keymap.set("n", "<leader>fg", telebuiltin.live_grep, {})
+
+vim.opt.termguicolors = true
+require('nvim-highlight-colors').setup({})
