@@ -50,14 +50,14 @@ esac
 # Override these settings in your ~/.zshrc
 
 # Current working directory
-: ${AGNOSTER_DIR_FG:=${CURRENT_FG}}
-: ${AGNOSTER_DIR_BG:=#FF2D88}
+# : ${AGNOSTER_DIR_FG:=${CURRENT_FG}}
+: ${AGNOSTER_DIR_FG:=#000}
+: ${AGNOSTER_DIR_BG:=#397D56}
 
 # user@host
 # : ${AGNOSTER_CONTEXT_FG:=${CURRENT_DEFAULT_FG}}
-: ${AGNOSTER_CONTEXT_FG:=#000000}
-# : ${AGNOSTER_CONTEXT_BG:=black}
-: ${AGNOSTER_CONTEXT_BG:=#CC00E5}
+: ${AGNOSTER_CONTEXT_FG:=#000}
+: ${AGNOSTER_CONTEXT_BG:=#296256}
 
 # Git related
 : ${AGNOSTER_GIT_CLEAN_FG:=${CURRENT_FG}}
@@ -86,9 +86,8 @@ esac
 # AWS Profile colors
 : ${AGNOSTER_AWS_PROD_FG:=yellow}
 : ${AGNOSTER_AWS_PROD_BG:=red}
-: ${AGNOSTER_AWS_FG:=black}
-: ${AGNOSTER_AWS_BG:=#b100fc}
-# : ${AGNOSTER_AWS_BG:=green}
+: ${AGNOSTER_AWS_FG:=#000}
+: ${AGNOSTER_AWS_BG:=#174557}
 
 # Status symbols
 : ${AGNOSTER_STATUS_RETVAL_FG:=red}

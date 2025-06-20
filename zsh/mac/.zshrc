@@ -8,15 +8,19 @@ plugins=(git ssh-agent)
 zstyle :omz:plugins:ssh-agent identities github
 
 source $ZSH/oh-my-zsh.sh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#667766,bg=#333333"
+bindkey '$' autosuggest-accept
+
+# --------------- Custom Config ---------------------------------
 
 export AWS_PROFILE=none
 source "$HOME/.cargo/env"
 
-. ~/scripts/*
-
-alist() {
-  stat -c $'%y\t%n' * | sort -nr
-}
+for s in ~/scripts/*; do
+  source "$s"
+done
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -38,9 +42,16 @@ load-nvmrc() {
     nvm use default
   fi
 }
+
+autoload -U compinit promptinit
+promptinit
+
+compinit
+zstyle ':completion*' menu select
+
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-autoload -U compinit; compinit
-
-eval "$(pyenv init --path)"
+if [[ "$(which pyenv)" != *"not found" ]]; then
+  eval "$(pyenv init --path)"
+fi
