@@ -63,7 +63,7 @@ esac
 : ${AGNOSTER_GIT_CLEAN_FG:=${CURRENT_FG}}
 : ${AGNOSTER_GIT_CLEAN_BG:=green}
 : ${AGNOSTER_GIT_DIRTY_FG:=black}
-: ${AGNOSTER_GIT_DIRTY_BG:=yellow}
+: ${AGNOSTER_GIT_DIRTY_BG:=#ddde00}
 
 # Bazaar related
 : ${AGNOSTER_BZR_CLEAN_FG:=${CURRENT_FG}}
