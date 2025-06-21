@@ -14,10 +14,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     map("<leader>ra", vim.lsp.buf.rename, "Rename all references")
     map("<leader>ef", vim.lsp.buf.format, "Format")
 
-    local telebuiltin = require("telescope.builtin")
-    map("<leader>ff", telebuiltin.find_files, "Fuzzy find files")
-    map("<leader>fg", telebuiltin.live_grep, "Grep files")
-
     vim.cmd("set completeopt+=noselect")
   end
 })

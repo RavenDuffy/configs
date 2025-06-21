@@ -1,8 +1,13 @@
 return {
   "m4xshen/autoclose.nvim",
   opts = {
-    enable_close = true,
-    enable_rename = true,
-    enable_close_on_slash = true
+    keys = {
+      ["'"] = { close = false }
+    },
+    options = {
+      pair_spaces = true,
+      disable_when_touch = true,
+      touch_regex = "[%w(%[{]",
+    }
   }
 }
