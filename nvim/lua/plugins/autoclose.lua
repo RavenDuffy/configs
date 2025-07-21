@@ -2,7 +2,9 @@ return {
   "m4xshen/autoclose.nvim",
   opts = {
     keys = {
-      ["'"] = { close = false }
+      ["'"] = { close = false },
+      ["\""] = { close = false },
+      ["`"] = { close = false },
     },
     options = {
       pair_spaces = true,
