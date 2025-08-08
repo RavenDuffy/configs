@@ -2,9 +2,10 @@ vim.lsp.enable({
   "lua-language-server",
   "ts-language-server",
   "prettierd",
-  "rustfmt",
   "rust-analyzer",
 })
+
+vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
 
 vim.diagnostic.config({
   virtual_lines = true,
