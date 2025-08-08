@@ -6,6 +6,9 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   opts = {
-    vim.keymap.set("n", "<leader>tt", ":NvimTreeToggle<CR>", { noremap = true })
+    vim.keymap.set("n", "<leader>tt", ":NvimTreeToggle<CR>", { noremap = true }),
+    filters = {
+      git_ignored = false
+    }
   }
 }
