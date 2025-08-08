@@ -102,6 +102,13 @@
       "Text" : "8",
       "Action" : 12
     },
+    "0xa3-0x20000-0x14" : {
+      "Version" : 2,
+      "Apply Mode" : 0,
+      "Action" : 12,
+      "Text" : "#",
+      "Escaping" : 2
+    },
     "0x2d-0x200000" : {
       "Text" : "-",
       "Action" : 12
@@ -265,6 +272,7 @@
   "BM Growl" : true,
   "Prompt Before Closing 2" : false,
   "Command" : "",
+  "Left Option Key Changeable" : true,
   "Selected Text Color" : {
     "Red Component" : 0,
     "Color Space" : "sRGB",
@@ -586,7 +594,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.7607843279838562
   },
-  "Normal Font" : "FiraCodeNFM-Ret 12",
+  "Normal Font" : "FiraCodeNFM-Med 12",
   "Unlimited Scrollback" : false,
   "Ansi 12 Color (Light)" : {
     "Green Component" : "0.6235294",
