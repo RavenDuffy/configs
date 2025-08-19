@@ -5,6 +5,7 @@ return {
     formatters_by_ft = {
       markdown = { "prettierd" },
       markdown_inline = { "prettierd" },
+      json = { "prettierd" },
       typescriptreact = { "prettierd" },
       typescript = { "prettierd" },
       javascriptreact = { "prettierd" },
