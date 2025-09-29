@@ -3,6 +3,7 @@ vim.lsp.enable({
   "ts-language-server",
   "prettierd",
   "rust-analyzer",
+  "terraform-language-server",
 })
 
 vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
