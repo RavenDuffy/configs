@@ -4,6 +4,7 @@ vim.lsp.enable({
   "prettierd",
   "rust-analyzer",
   "terraform-language-server",
+  "docker-compose-language-server"
 })
 
 vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]

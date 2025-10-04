@@ -18,3 +18,10 @@ if vim.fn.has("wsl") == 1 then
     }
   end
 end
+
+vim.filetype.add({
+  pattern = {
+    ["compose.*%.ya?ml"] = "yaml.docker-compose",
+    ["docker%-compose.*%.ya?ml"] = "yaml.docker-compose",
+  }
+})
