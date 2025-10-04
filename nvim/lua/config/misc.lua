@@ -19,6 +19,7 @@ if vim.fn.has("wsl") == 1 then
   end
 end
 
+-- Fix for yaml.docker-compose filetypes https://github.com/neovim/neovim/discussions/26571#discussioncomment-11879196
 vim.filetype.add({
   pattern = {
     ["compose.*%.ya?ml"] = "yaml.docker-compose",
