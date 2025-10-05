@@ -6,12 +6,13 @@ return {
       markdown = { "prettierd" },
       markdown_inline = { "prettierd" },
       json = { "prettierd" },
+      jsonc = { "prettierd" },
       typescriptreact = { "prettierd" },
       typescript = { "prettierd" },
       javascriptreact = { "prettierd" },
       javascript = { "prettierd" },
-      -- terraform = { "terraform-language-server" },
-      -- tf = { "terraform-language-server" },
+      terraform = { "terraform-language-server" },
+      tf = { "terraform-language-server" },
     },
     formatters = {
       prettierd = {
