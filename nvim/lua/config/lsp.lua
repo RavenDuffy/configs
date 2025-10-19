@@ -8,8 +8,6 @@ vim.lsp.enable({
   "tailwind-language-server"
 })
 
-vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
-
 vim.diagnostic.config({
   virtual_lines = true,
   underline = true,
