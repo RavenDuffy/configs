@@ -4,7 +4,8 @@ vim.lsp.enable({
   "prettierd",
   "rust-analyzer",
   "terraform-language-server",
-  "docker-compose-language-server"
+  "docker-compose-language-server",
+  "tailwind-language-server"
 })
 
 vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
@@ -24,3 +25,14 @@ vim.o.winborder = "rounded"
 
 vim.api.nvim_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
+
+local capabilities = {
+  textDocument = {
+    foldingRange = {
+      dynamicRegistration = false,
+      lineFoldingOnly = true
+    }
+  }
+}
+
+capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)

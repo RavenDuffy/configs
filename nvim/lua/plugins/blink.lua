@@ -17,7 +17,7 @@ return {
   completion = {
     menu = {
       draw = {
-        treesitter = { "lsp" }
+        treesitter = { "lsp", "buffer", "path" }
       }
     },
     ghost_text = {

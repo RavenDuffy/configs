@@ -1,9 +1,10 @@
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ev)
-    local client = vim.lsp.get_client_by_id(ev.data.client_id)
-    if client:supports_method('textDocument/completion') then
-      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
-    end
+    -- Used if blink.cmp is no longer in use
+    -- local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    -- if client:supports_method('textDocument/completion') then
+    ---- vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+    -- end
 
     local map = function(keys, func, desc)
       vim.keymap.set("n", keys, func, { buffer = ev.buf, desc = "LSP: " .. desc })
