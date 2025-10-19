@@ -13,9 +13,9 @@ return {
     "typescript.tsx",
   },
   root_markers = {
-    ".git",
+    "tailwind.config.*",
     "postcss.config.*",
-    "tailwind.config.*"
+    ".git",
   },
   init_options = {
     ignoreSingleFileWarning = true
