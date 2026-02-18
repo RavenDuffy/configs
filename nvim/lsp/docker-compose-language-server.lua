@@ -1,4 +1,4 @@
--- Requires: lua-lanugage-server
+-- Requires: @microsoft/compose-language-service
 return {
   cmd = {
     "docker-compose-langserver",

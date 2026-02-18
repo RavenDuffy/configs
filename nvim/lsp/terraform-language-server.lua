@@ -1,4 +1,4 @@
--- Requires: lua-lanugage-server
+-- Requires: terraform-ls
 return {
   cmd = {
     "terraform-ls",

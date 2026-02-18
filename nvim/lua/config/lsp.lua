@@ -5,7 +5,8 @@ vim.lsp.enable({
   "rust-analyzer",
   "terraform-language-server",
   "docker-compose-language-server",
-  "tailwind-language-server"
+  "tailwind-language-server",
+  "docker-language-server"
 })
 
 vim.diagnostic.config({
