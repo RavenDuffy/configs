@@ -1,18 +1,27 @@
+# Dependencies
+# zsh-autosuggestions https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
+
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="agnoster-c"
 
-plugins=(git ssh-agent)
+plugins=(git ssh-agent virtualenv kubectl kube-ps1 npm docker zsh-autosuggestions)
 
 zstyle :omz:plugins:ssh-agent identities ed-nhs-key ed-raven-key
 
 source $ZSH/oh-my-zsh.sh
+source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#667766,bg=#333333"
+bindkey '^ ' autosuggest-accept
 
 export BROWSER="/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
-export AWS_PROFILE=AggNonProd
-#export AWS_PROFILE="nhsd-dev"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
-. ~/scripts/*
+for s in ~/scripts/*; do
+  source "$s"
+done
 
 alist() {
   stat -c $'%y\t%n' * | sort -nr
@@ -38,9 +47,15 @@ load-nvmrc() {
     nvm use default
   fi
 }
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
 
-autoload -U compinit; compinit
+add-zsh-hook chpwd load-nvmrc
+add-zsh-hook chpwd load-asdf
+load-nvmrc; load-asdf
+
+autoload -U compinit promptinit
+promptinit; compinit
+zstyle ':completion:*' menu select
 
 eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
