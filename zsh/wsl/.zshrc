@@ -5,9 +5,9 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="agnoster-c"
 
-plugins=(git ssh-agent virtualenv kubectl kube-ps1 npm docker zsh-autosuggestions)
+plugins=(git ssh-agent virtualenv kubectl kube-ps1 npm docker docker-compose zsh-autosuggestions)
 
-zstyle :omz:plugins:ssh-agent identities ed-nhs-key ed-raven-key
+zstyle :omz:plugins:ssh-agent identities id-<secure>-key ed-raven-key
 
 source $ZSH/oh-my-zsh.sh
 source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -16,12 +16,13 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#667766,bg=#333333"
 bindkey '^ ' autosuggest-accept
 
 export BROWSER="/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH:${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
-for s in ~/scripts/*; do
-  source "$s"
-done
+if [[ -n "$(ls -A ~/scripts 2>/dev/null)" ]] then
+  for s in ~/scripts/*; do
+    source "$s"
+  done
+fi
 
 alist() {
   stat -c $'%y\t%n' * | sort -nr
@@ -32,6 +33,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 autoload -U add-zsh-hook
+# ------------- Hook Definitions ----------------------------------------------
 load-nvmrc() {
   local node_version="$(nvm version)"
   local nvmrc_path="$(nvm_find_nvmrc)"
@@ -48,12 +50,22 @@ load-nvmrc() {
   fi
 }
 
+load-asdf() {
+  local tool_path="$PWD/.tool-versions"
+  if [ -e $tool_path ]; then
+    cat .tool-versions | cut -d' ' -f1 | grep "^[^\#]" | xargs -i asdf plugin add {}
+    asdf install
+  fi
+}
+
 add-zsh-hook chpwd load-nvmrc
 add-zsh-hook chpwd load-asdf
 load-nvmrc; load-asdf
+# -----------------------------------------------------------------------------
 
 autoload -U compinit promptinit
-promptinit; compinit
+promptinit
+compinit
 zstyle ':completion:*' menu select
 
 eval "$(pyenv init --path)"
