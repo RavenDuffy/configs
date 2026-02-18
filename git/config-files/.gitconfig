@@ -1,0 +1,7 @@
+[includeIf "gitdir:~/git/"]
+  path = .gitconfig-personal
+[includeIf "gitdir:~/<secure>-git/"]
+  path = .gitconfig-<secure>
+[core]
+  editor = /usr/bin/nvim
+  autocrlf = input

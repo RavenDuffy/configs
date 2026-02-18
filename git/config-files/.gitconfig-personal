@@ -1,0 +1,6 @@
+[user]
+name = Raven
+email = ravend2013@gmail.com
+
+[core]
+sshCommand = ssh -i ~/.ssh/ed-raven-key

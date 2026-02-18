@@ -1,0 +1,13 @@
+[user]
+name = Raven <secure>
+email = 000000000+<name>@users.noreply.github.com
+signingkey = <short-gpg-key>
+
+[core]
+sshCommand = ssh -i ~/.ssh/id-<secure>-key
+
+[commit]
+gpgsign = true
+
+[tag]
+gpgsign = true
