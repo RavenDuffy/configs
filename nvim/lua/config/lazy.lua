@@ -48,5 +48,3 @@ vim.cmd("set ignorecase")
 vim.cmd("set lazyredraw")
 
 vim.cmd("colorscheme onedark")
-
-vim.opt.termguicolors = true

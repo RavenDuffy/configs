@@ -10,7 +10,7 @@
   "nvim-eslint": { "branch": "main", "commit": "d2e4f00470a022560381bc62a486f2477c51f6b5" },
   "nvim-highlight-colors": { "branch": "main", "commit": "e2cb22089cc2358b2b995c09578224f142de6039" },
   "nvim-tree.lua": { "branch": "master", "commit": "a0db8bf7d6488b1dcd9cb5b0dfd6684a1e14f769" },
-  "nvim-treesitter": { "branch": "main", "commit": "02115634451887fe53ca7e2203b22767de746bd4" },
+  "nvim-treesitter": { "branch": "main", "commit": "fcd51bbe9245aa9b79a3930ed9ac42e16e1cf33f" },
   "nvim-ts-autotag": { "branch": "main", "commit": "8e1c0a389f20bf7f5b0dd0e00306c1247bda2595" },
   "nvim-web-devicons": { "branch": "master", "commit": "746ffbb17975ebd6c40142362eee1b0249969c5c" },
   "onedarkpro.nvim": { "branch": "main", "commit": "743bf248cf238a0625f3a204eecefafcf6281a9f" },
