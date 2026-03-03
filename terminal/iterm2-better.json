@@ -259,7 +259,7 @@
     "Red Component" : "0"
   },
   "Ambiguous Double Width" : false,
-  "Option Key Sends" : 0,
+  "Option Key Sends" : 2,
   "Ansi 3 Color" : {
     "Red Component" : 0.78058648109436035,
     "Color Space" : "sRGB",
@@ -337,7 +337,7 @@
     "Green Component" : 0.69398260116577148
   },
   "Default Bookmark" : "No",
-  "Minimum Contrast (Dark)" : 0,
+  "Minimum Contrast (Dark)" : 0.22388392857142858,
   "Custom Command" : "No",
   "Foreground Color (Light)" : {
     "Green Component" : "1",
@@ -529,7 +529,7 @@
     "Blue Component" : "0.8117647",
     "Red Component" : "0.4470588"
   },
-  "Faint Text Alpha (Dark)" : 0.39596845518867924,
+  "Faint Text Alpha (Dark)" : 0.4043761932839175,
   "Ansi 7 Color" : {
     "Red Component" : 0.7810397744178772,
     "Color Space" : "sRGB",
