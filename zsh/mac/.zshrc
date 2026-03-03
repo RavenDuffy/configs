@@ -1,31 +1,36 @@
+# Dependencies
+# zsh-autosuggestions https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="agnoster-c"
 
-plugins=(git ssh-agent)
+plugins=(git ssh-agent virtualenv kubectl kube-ps1 npm docker docker-compose zsh-autosuggestions)
 
-zstyle :omz:plugins:ssh-agent identities github
+zstyle :omz:plugins:ssh-agent identities github codeberg
 
 source $ZSH/oh-my-zsh.sh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#667766,bg=#333333"
-bindkey '$' autosuggest-accept
+bindkey '^ ' autosuggest-accept
 
 # --------------- Custom Config ---------------------------------
 
-export AWS_PROFILE=none
 source "$HOME/.cargo/env"
 
-for s in ~/scripts/*; do
-  source "$s"
-done
+if [[ -n "$(ls -A ~/scripts 2>/dev/null)" ]] then
+  for s in ~/scripts/*; do
+    source "$s"
+  done
+fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# ------------- Hook Definitions ----------------------------------------------
 autoload -U add-zsh-hook
 load-nvmrc() {
   local node_version="$(nvm version)"
@@ -43,14 +48,13 @@ load-nvmrc() {
   fi
 }
 
-autoload -U compinit promptinit
-promptinit
-
-compinit
-zstyle ':completion*' menu select
-
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
+
+autoload -U compinit promptinit
+promptinit
+compinit
+zstyle ':completion*' menu select
 
 if [[ "$(which pyenv)" != *"not found" ]]; then
   eval "$(pyenv init --path)"
