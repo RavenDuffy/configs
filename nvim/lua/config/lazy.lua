@@ -48,3 +48,5 @@ vim.cmd("set ignorecase")
 vim.cmd("set lazyredraw")
 
 vim.cmd("colorscheme onedark")
+
+vim.cmd("set fcs=eob:\\ ")
