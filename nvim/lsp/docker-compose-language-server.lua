@@ -1,15 +1,15 @@
 -- Requires: @microsoft/compose-language-service
 return {
-  cmd = {
-    "docker-compose-langserver",
-    "--stdio",
-  },
-  filetypes = {
-    "yaml.docker-compose",
-  },
-  init_options = {
-    ignoreSingleFileWarning = true
-  },
-  single_file_support = true,
-  log_level = vim.lsp.protocol.MessageType.Warning,
+	cmd = {
+		"docker-compose-langserver",
+		"--stdio",
+	},
+	filetypes = {
+		"yaml.docker-compose",
+	},
+	init_options = {
+		ignoreSingleFileWarning = true,
+	},
+	single_file_support = true,
+	log_level = vim.lsp.protocol.MessageType.Warning,
 }

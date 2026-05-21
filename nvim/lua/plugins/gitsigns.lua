@@ -1,6 +1,6 @@
 return {
-  'lewis6991/gitsigns.nvim',
-  opts = {
-    sign_column = true
-  }
+	"lewis6991/gitsigns.nvim",
+	opts = {
+		sign_column = true,
+	},
 }
